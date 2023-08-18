@@ -27,7 +27,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname,'./client/build')));
+app.use(express.static(path.join(__dirname,"./client/build")));
 
 //routes
 app.use("/api/v1/auth", authRoutes);
@@ -39,7 +39,7 @@ app.use("/api/v1/product", productRoutes);
 //   res.send("<h1>Welcome to ecommerce app</h1>");
 // });
 app.use('*', function(req, res){
-  res.sendFile(path,join(__dirname,'./client/build/index.html'));
+  res.sendFile(path.join(__dirname,"./client/build/index.html"));
 });
 
 //PORT
